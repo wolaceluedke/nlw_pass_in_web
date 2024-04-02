@@ -1,4 +1,5 @@
 import { Search, MoreHorizontal, ChevronLeft, ChevronsLeft, ChevronsRight, ChevronRight } from 'lucide-react'
+import { IconButton } from './icon-button'
 
 export function AttendeList() {
   return (
@@ -59,18 +60,18 @@ export function AttendeList() {
               <span>Página 1 de 23</span>
             
             <div className='flex gap-1.5'>
-            <button className='bg-white/10 border border-white/10 rounded-md p-1.5'>
+                <IconButton>
                   <ChevronsLeft className='size-4' />
-                </button>
-                <button className='bg-white/10  border border-white/10 rounded-md p-1.5'>
+                </IconButton>
+                <IconButton>
                   <ChevronLeft className='size-4' />
-                </button>
-                <button className='bg-white/10  border border-white/10 rounded-md p-1.5'>
+                </IconButton>
+                <IconButton>
                   <ChevronRight className='size-4' />
-                </button>
-                <button className='bg-white/10  border border-white/10 rounded-md p-1.5'>
+                </IconButton>
+                <IconButton>
                   <ChevronsRight className='size-4' />
-                </button>
+                </IconButton>
             </div>
             </div>
             </td>
