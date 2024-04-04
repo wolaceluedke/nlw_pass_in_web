@@ -1,5 +1,8 @@
 import { Search, MoreHorizontal, ChevronLeft, ChevronsLeft, ChevronsRight, ChevronRight } from 'lucide-react'
 import { IconButton } from './icon-button'
+import { Table } from './table/table'
+import { TableHeader } from './table/table.header'
+import { TableCell } from './table/table-cell'
 
 export function AttendeList() {
   return (
@@ -12,49 +15,48 @@ export function AttendeList() {
       </div>
     </div>
 
-<div className=' border border-white/10 rounder-lg'>
-    <table className='w-full '>
+<Table>
       <thead>
         <tr className='border-b border-white/10'>
-          <th style={{ width: 48 }} className='py-3 px-4 text-sm font-semibold text-left'>
+          <TableHeader style={{ width: 48 }} >
             <input type='checkbox ' className='size-4 bg-black/20 rounded border border-white/10'/>
-          </th>
-          <th className='py-3 px-4 text-sm font-semibold text-left'>Código</th>
-          <th className='py-3 px-4 text-sm font-semibold text-left'>Participante</th>
-          <th className='py-3 px-4 text-sm font-semibold text-left'>Data da incrição</th>
-          <th className='py-3 px-4 text-sm font-semibold text-left' >Data do check-in</th>
-          <th style={{ width: 64 }} className='py-3 px-4 text-sm font-semibold text-left' ></th>
+          </TableHeader>
+          <TableHeader>Código</TableHeader>
+          <TableHeader>Participante</TableHeader>
+          <TableHeader>Data da incrição</TableHeader>
+          <TableHeader>Data do check-in</TableHeader>
+          <TableHeader style={{ width: 64 }}  ></TableHeader>
         </tr>
         </thead>
         <tbody>
         {Array.from({ length: 10 }).map((_, i) => {
           return (
             <tr key={i} className='border-b border-white/10 hover:bg-white/5'>
-            <td className='py-3 px-4 text-sm text-zinc-300'>
+            <TableCell>
               <input type="checkbox" className='size-4 bg-black/20 rounded border border-white/10 ' />
-              </td>
-              <td className='py-3 px-4 text-sm text-zinc-300'>12345</td>
-              <td className='py-3 px-4 text-sm text-zinc-300'>
+              </TableCell>
+              <TableCell>12345</TableCell>
+              <TableCell>
                 <div className='flex flex-col gap-1'>
                   <span className='font-semibold text-white'>Wolace</span>
                   <span>wolacepin@hotmail.com</span>
                 </div>
-              </td>
-              <td className='py-3 px-4 text-sm text-zinc-300'>7 dias atrás</td>
-              <td className='py-3 px-4 text-sm text-zinc-300'>3 dias atrás</td>
-              <td className='py-3 px-4 text-sm '>
-                <button className='bg-black/20 border border-white/10 rounded-md p-1.5'>
+              </TableCell>
+              <TableCell>7 dias atrás</TableCell>
+              <TableCell>3 dias atrás</TableCell>
+              <TableCell>
+                <IconButton transparent={true}>
                   <MoreHorizontal className='size-4' />
-                </button>
-              </td>
+                </IconButton>
+              </TableCell>
           </tr>
           )
         })}
         </tbody>
         <tfoot>
           <tr>
-            <td className='py-3 px-4 text-sm text-zinc-300' colSpan={3}>
-            Mostrando 10 de 228 items</td>
+            <TableCell className='py-3 px-4 text-sm text-zinc-300' colSpan={3}>
+            Mostrando 10 de 228 items</TableCell>
             <td className='py-3 px-4 text-sm text-zinc-300 text-right' colSpan={3}>
             <div className='items-center gap-8 inline-flex'>
               <span>Página 1 de 23</span>
@@ -77,8 +79,7 @@ export function AttendeList() {
             </td>
           </tr>
         </tfoot>
-    </table>
-   </div>
+    </Table>
    </div>
   )
 }
